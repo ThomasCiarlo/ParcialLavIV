@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Foto</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Actor</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let peli of this.item">
+      <tr>
+        <td><img src="{{peli.imagen}}" alt=""></td>
+        <td>{{peli.Nombre}}</td>
+        <td>{{peli.tipo}}</td>
+        <td>{{peli.actor}}</td>
+        <td><button type="button" class="btn btn-info btn-circle"   (click)="mostrarDetalles(peli)"><i class="fa fa-check"></i>
+        </button></td>
+      </tr>
+    </tbody>
+  </table>

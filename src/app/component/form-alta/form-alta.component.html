@@ -1,0 +1,17 @@
+<div class="d-flex column container">
+    <form [formGroup]="form" (ngSubmit)="aceptar()">
+      <div class="mb-3">
+        <label for="apellido" class="form-label">apellido</label>
+        <input type="text" formControlName="apellido" class="form-control" id="apellido">
+      </div>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" formControlName="nombre" class="form-control" id="nombre">
+      </div>
+      <div class="mb-3">
+        <label for="bandera" class="form-label">Bandera</label>
+        <input type="text" formControlName="bandera" class="form-control" id="bandera" readonly value="{{this.pais}}">
+      </div>
+      <button type="submit" class="btn btn-primary">Crear</button>
+    </form>
+</div>

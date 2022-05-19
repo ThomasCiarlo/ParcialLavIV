@@ -1,0 +1,21 @@
+<div class="d-flex column container">
+    <form [formGroup]="form" (ngSubmit)="aceptar()">
+      <div class="mb-3">
+        <label for="Titulo" class="form-label">Titulo</label>
+        <input type="text" formControlName="Titulo" class="form-control" id="Titulo">
+      </div>
+      <div class="mb-3">
+        <label for="Actor" class="form-label">Actor</label>
+        <input type="text" formControlName="Actor" class="form-control" id="Actor" value="{{this.actor}}" readonly>
+      </div>
+      <div class="mb-3">
+        <label for="Tipo" class="form-label">Tipo</label>
+        <input type="text" formControlName="Tipo" class="form-control" id="Tipo">
+      </div>
+      <div class="mb-3">
+        <label for="Imagen" class="form-label">Imagen</label>
+        <input type="file" formControlName="Imagen" class="form-control" id="Imagen">
+      </div>
+      <button type="submit" class="btn btn-primary">Crear</button>
+    </form>
+</div>

@@ -1,0 +1,15 @@
+<div class="container d-flex row justify-content-center border border p-2 mb-2 border-opacity-25 h-100">
+
+    <div class="m-10">
+        <h1>Alta Peliculas</h1>
+    </div>
+
+    <div class="d-flex column justify-content-center mx-auto">
+        <app-form-alta-peli (PeliNueva)="this.AltaPelicula($event)"
+            [actor]="this.actorSeleccionado?.nombre + ', ' + this.actorSeleccionado?.apellido"></app-form-alta-peli>
+
+        <app-actor-listado [item]="this.serviceActores.actores" (ActorSeleccionado)="this.tomarActor($event)"
+            [muestroBoton]="true"></app-actor-listado>
+    </div>
+
+</div>

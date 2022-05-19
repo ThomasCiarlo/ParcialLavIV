@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Bandera</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let pais of this.paises.paises">
+      <tr>
+        <th scope="row">1</th>
+        <td>{{pais.Nombre}}</td>
+        <td>{{pais.bandera}}</td>
+        <td><button type="button" class="btn btn-info btn-circle" (click)="this.enviarPais(pais.Nombre)"><i class="fa fa-check"></i>
+          Elegir
+        </button></td>
+      </tr>
+    </tbody>
+  </table>
