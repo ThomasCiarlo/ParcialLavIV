@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
@@ -22,16 +22,25 @@ export class LoginComponent implements OnInit {
   }
 
 
-  aceptar()
-  {
-    const {usuario,password} = this.form.value;
-      if(this.serviceLogin.login(usuario,password)){
-        console.log("se logueo")
-        return true;  
+  aceptar() {
+    const { usuario, password } = this.form.value;
+    if (this.serviceLogin.login(usuario, password)) {
+      console.log("se logueo")
+      return true;
 
-      }
-    console.log(usuario,password)
-      console.log("no logueo") 
+    }
+    console.log(usuario, password)
+    console.log("no logueo")
+    return false;
+  }
+
+  rapido() {
+    if (this.serviceLogin.login('empleado', '1234')) {
+      console.log("se logueo")
+      return true;
+
+    }
+    console.log("no logueo")
     return false;
   }
 

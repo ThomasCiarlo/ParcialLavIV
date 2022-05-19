@@ -1,4 +1,4 @@
-import { Component, OnInit,EventEmitter,Output } from '@angular/core';
+import { Component, OnInit,EventEmitter,Output, Input } from '@angular/core';
 import { PaisesServiceService } from 'src/app/service/paisesService/paises-service.service';
 
 @Component({

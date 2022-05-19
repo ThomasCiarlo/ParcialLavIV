@@ -12,17 +12,17 @@ export class ActorListadoComponent implements OnInit {
   @Input() item: Producto[] | undefined;
   @Input() muestroBoton: boolean | undefined;
 
-  @Output() ActorSeleccionado: EventEmitter<any>= new EventEmitter<any>();
+  @Output() prodSeleccionado: EventEmitter<any>= new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  mostrarDetalles(actor:Producto)
+  mostrarDetalles(peli:Producto)
   {
-    console.info("mostrar detalles",actor);
-    this.ActorSeleccionado.emit(actor);
+    console.info("mostrar detalles",peli);
+    this.prodSeleccionado.emit(peli);
   }
 
 

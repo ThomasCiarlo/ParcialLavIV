@@ -21,6 +21,8 @@ import {HttpClientModule} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { LoginComponent } from './component/login/login.component';
 import { ConsumidorApiComponent } from './component/consumidor-api/consumidor-api.component';
+import { DetalleProductoComponent } from './component/detalle-producto/detalle-producto.component';
+import { BusquedaProductoComponent } from './component/busqueda-producto/busqueda-producto.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { ConsumidorApiComponent } from './component/consumidor-api/consumidor-ap
     FormAltaPeliComponent,
     LoginComponent,
     ConsumidorApiComponent,
+    DetalleProductoComponent,
+    BusquedaProductoComponent,
   ],
   imports: [
     BrowserModule,

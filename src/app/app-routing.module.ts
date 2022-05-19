@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ActorAltaComponent } from './component/actorAlta/actor-alta/actor-alta.component';
 import { ActorListadoComponent } from './component/actorListado/actor-listado/actor-listado.component';
 import { BienvenidoComponent } from './component/bienvenido/bienvenido/bienvenido.component';
+import { BusquedaProductoComponent } from './component/busqueda-producto/busqueda-producto.component';
 import { BusquedaComponent } from './component/busqueda/busqueda/busqueda.component';
 import { LoginComponent } from './component/login/login.component';
 import { PeliculaAltaComponent } from './component/peliculaAlta/pelicula-alta/pelicula-alta.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'actor/listado', component: ActorListadoComponent },
   { path: 'pelicula/listado', component: PeliculaListadoComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'busquedaProducto', component: BusquedaProductoComponent },
 
 ];
 

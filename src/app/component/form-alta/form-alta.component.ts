@@ -23,14 +23,15 @@ export class FormAltaComponent implements OnInit {
     this.form = this.fb.group({
       'descripcion': ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       'precio': [],
+      'stock': [],
       'comestible': []
     });
   }
 
   public aceptar()
   {
-    const {descripcion,precio,comestible} = this.form.value;
-    this.actorNuevo.emit(new Producto(3,descripcion,precio,0,this.pais,comestible));
+    const {descripcion,precio,stock,comestible} = this.form.value;
+    this.actorNuevo.emit(new Producto(3,descripcion,precio,stock,this.pais,comestible));
     this.form.reset();
 
   }

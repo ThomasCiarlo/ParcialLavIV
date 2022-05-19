@@ -4,17 +4,17 @@ export class Producto {
     descripcion!: string ;
     precio!: number;
     stock!:number;
-    país!: string;
+    paiss!: string;
     comestible: boolean = false;
 
 
-    constructor(codigo: number, descripcion: string, precio: number, stock:number, país: string,comestible: boolean)   
+    constructor(codigo: number, descripcion: string, precio: number, stock:number, pais: string,comestible: boolean)   
     {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.precio = precio;
         this.stock = stock;
-        this.país = país;
+        this.paiss = pais;
         this.comestible = comestible;
     }
 
