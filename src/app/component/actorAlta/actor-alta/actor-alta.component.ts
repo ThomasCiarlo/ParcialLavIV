@@ -2,6 +2,7 @@ import { Component, OnInit,Input } from '@angular/core';
 import { Producto } from 'src/app/entidad/producto/producto';
 import { Actores } from 'src/app/entidades/actores/actores';
 import { ActoresServiceService } from 'src/app/service/actoresService/actores-service.service';
+import { GuardarService } from 'src/app/service/guardarDatos/guardar.service';
 import { ProductoService } from 'src/app/service/producto/producto.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class ActorAltaComponent implements OnInit {
   paisSeleccionado!: string;
   productoNuevo? : Producto;
 
-  constructor(public serviceActores: ActoresServiceService,public serviceProducto: ProductoService) { }
+  constructor(public serviceActores: ActoresServiceService,public serviceProducto: ProductoService, public serviceGuardar: GuardarService) { }
 
   ngOnInit(): void {
   }
@@ -28,6 +29,8 @@ export class ActorAltaComponent implements OnInit {
   {
     this.productoNuevo = prod;
     this.serviceProducto.Producto.push(this.productoNuevo);
+    this.serviceGuardar.subirFirebaseProducto(prod);
+    
   }
 
 }

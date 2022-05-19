@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class HttpService {
 
-  api: string = 'https://api.github.com/users/octaviovillegas';
+  api: string = 'https://api.github.com/users/thomasciarlo';
 
   constructor(public http: HttpClient) { }
 

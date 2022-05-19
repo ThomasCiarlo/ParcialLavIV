@@ -9,8 +9,13 @@ import { PaisesServiceService } from 'src/app/service/paisesService/paises-servi
 export class TablaPaisesComponent implements OnInit {
 
   @Output() PeliSeleccionado: EventEmitter<any>= new EventEmitter<any>();
+  @Input() PaisFiltrado!: string;
+  listaMostrar = {};
 
-  constructor(public paises: PaisesServiceService) { }
+  constructor(public paises: PaisesServiceService) 
+  {
+      this.filtrarPais();
+  }
 
   ngOnInit(): void {
   }
@@ -19,6 +24,15 @@ export class TablaPaisesComponent implements OnInit {
   {
     console.info("mostrar detalles",pais);
     this.PeliSeleccionado.emit(pais);
+  }
+
+  public filtrarPais()
+  {
+    let pais = null;
+
+    if(this.PaisFiltrado != null){
+     this.paises.paises.filter(pais => pais.Nombre == this.PaisFiltrado);
+    }
   }
 
 }

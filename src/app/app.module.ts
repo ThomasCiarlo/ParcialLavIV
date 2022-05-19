@@ -24,6 +24,11 @@ import { ConsumidorApiComponent } from './component/consumidor-api/consumidor-ap
 import { DetalleProductoComponent } from './component/detalle-producto/detalle-producto.component';
 import { BusquedaProductoComponent } from './component/busqueda-producto/busqueda-producto.component';
 
+import { environment } from 'src/environments/environment';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +53,9 @@ import { BusquedaProductoComponent } from './component/busqueda-producto/busqued
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

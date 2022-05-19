@@ -7,6 +7,7 @@ export class LoginService {
 
 
   estalogueado = false;
+  usuario = '';
   constructor() { }
 
 
@@ -14,11 +15,13 @@ export class LoginService {
   {
     if('admin' == user && '1234' == password){
       this.estalogueado = true;
+      this.usuario = user;
       return true;
     }
 
     if('empleado' == user && '1234' == password){
       this.estalogueado = true;
+      this.usuario = user;
       return true;
     }
 
