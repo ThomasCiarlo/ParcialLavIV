@@ -1,16 +1,23 @@
 <div class="d-flex column container">
     <form [formGroup]="form" (ngSubmit)="aceptar()">
       <div class="mb-3">
-        <label for="apellido" class="form-label">apellido</label>
-        <input type="text" formControlName="apellido" class="form-control" id="apellido">
+        <label for="descripcion" class="form-label">descripcion</label>
+        <input type="text" formControlName="descripcion" class="form-control" id="descripcion">
       </div>
       <div class="mb-3">
-        <label for="nombre" class="form-label">Nombre</label>
-        <input type="text" formControlName="nombre" class="form-control" id="nombre">
+        <label for="precio" class="form-label">precio</label>
+        <input type="number" formControlName="precio" class="form-control" id="precio">
       </div>
       <div class="mb-3">
         <label for="bandera" class="form-label">Bandera</label>
-        <input type="text" formControlName="bandera" class="form-control" id="bandera" readonly value="{{this.pais}}">
+        <input type="text" formControlName="stock" class="form-control" id="bandera" readonly value="{{this.pais}}">
+      </div>
+      <div class="mb-3">
+        <label for="comestible" class="form-label">Comestible</label>
+        <select name="cars" id="cars" formControlName="comestible">
+          <option value="{{true}}">true</option>
+          <option value="{{false}}">false</option>
+        </select>
       </div>
       <button type="submit" class="btn btn-primary">Crear</button>
     </form>

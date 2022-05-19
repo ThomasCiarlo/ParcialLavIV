@@ -1,6 +1,8 @@
 import { Component, OnInit,Input } from '@angular/core';
+import { Producto } from 'src/app/entidad/producto/producto';
 import { Actores } from 'src/app/entidades/actores/actores';
 import { ActoresServiceService } from 'src/app/service/actoresService/actores-service.service';
+import { ProductoService } from 'src/app/service/producto/producto.service';
 
 @Component({
   selector: 'app-actor-alta',
@@ -10,9 +12,9 @@ import { ActoresServiceService } from 'src/app/service/actoresService/actores-se
 export class ActorAltaComponent implements OnInit {
 
   paisSeleccionado!: string;
-  actorNuevo? : Actores;
+  productoNuevo? : Producto;
 
-  constructor(public serviceActores: ActoresServiceService) { }
+  constructor(public serviceActores: ActoresServiceService,public serviceProducto: ProductoService) { }
 
   ngOnInit(): void {
   }
@@ -22,10 +24,10 @@ export class ActorAltaComponent implements OnInit {
       this.paisSeleccionado = pais;
   }
 
-  tomarnuevoActor(actor: Actores)
+  tomarnuevoActor(prod: Producto)
   {
-    this.actorNuevo = actor;
-    this.serviceActores.actores.push(this.actorNuevo);
+    this.productoNuevo = prod;
+    this.serviceProducto.Producto.push(this.productoNuevo);
   }
 
 }

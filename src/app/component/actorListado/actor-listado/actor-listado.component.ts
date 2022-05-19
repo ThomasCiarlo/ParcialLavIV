@@ -1,4 +1,5 @@
 import { Component, Input, OnInit,Output,EventEmitter } from '@angular/core';
+import { Producto } from 'src/app/entidad/producto/producto';
 import { Actores } from 'src/app/entidades/actores/actores';
 
 @Component({
@@ -8,7 +9,7 @@ import { Actores } from 'src/app/entidades/actores/actores';
 })
 export class ActorListadoComponent implements OnInit {
 
-  @Input() item: Actores[] | undefined;
+  @Input() item: Producto[] | undefined;
   @Input() muestroBoton: boolean | undefined;
 
   @Output() ActorSeleccionado: EventEmitter<any>= new EventEmitter<any>();
@@ -18,7 +19,7 @@ export class ActorListadoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  mostrarDetalles(actor:Actores)
+  mostrarDetalles(actor:Producto)
   {
     console.info("mostrar detalles",actor);
     this.ActorSeleccionado.emit(actor);

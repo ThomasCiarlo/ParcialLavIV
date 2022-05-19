@@ -16,6 +16,12 @@ import { FormAltaComponent } from './component/form-alta/form-alta.component';
 
 import { FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { FormAltaPeliComponent } from './component/form-alta-peli/form-alta-peli.component';
+
+import {HttpClientModule} from '@angular/common/http'
+import { Observable } from 'rxjs';
+import { LoginComponent } from './component/login/login.component';
+import { ConsumidorApiComponent } from './component/consumidor-api/consumidor-api.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,11 +36,14 @@ import { FormAltaPeliComponent } from './component/form-alta-peli/form-alta-peli
     TablaPaisesComponent,
     FormAltaComponent,
     FormAltaPeliComponent,
+    LoginComponent,
+    ConsumidorApiComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

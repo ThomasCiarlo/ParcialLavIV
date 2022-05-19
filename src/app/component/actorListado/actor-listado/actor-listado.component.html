@@ -1,17 +1,17 @@
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellido</th>
-        <th scope="col">Nacionalidad</th>
+        <th scope="col">Dexcripcion</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Stock</th>
       </tr>
     </thead>
-    <tbody *ngFor="let actor of this.item">
+    <tbody *ngFor="let prod of this.item">
       <tr>
-        <td>{{actor.nombre}}</td>
-        <td>{{actor.apellido}}</td>
-        <td>{{actor.nacionalidad}}</td>
-        <td><button type="button" *ngIf="this.muestroBoton" class="btn btn-info btn-circle" (click)="this.mostrarDetalles(actor)"><i class="fa fa-check"></i>Seleccionar
+        <td>{{prod.descripcion}}</td>
+        <td>{{prod.precio}}</td>
+        <td>{{prod.stock}}</td>
+        <td><button type="button" *ngIf="this.muestroBoton" class="btn btn-info btn-circle" (click)="this.mostrarDetalles(prod)"><i class="fa fa-check"></i>Seleccionar
         </button></td>
       </tr>
     </tbody>

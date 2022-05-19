@@ -1,20 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/service/http.service';
 import { Observable } from 'rxjs';
-import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
-  selector: 'app-bienvenido',
-  templateUrl: './bienvenido.component.html',
-  styleUrls: ['./bienvenido.component.css']
+  selector: 'app-consumidor-api',
+  templateUrl: './consumidor-api.component.html',
+  styleUrls: ['./consumidor-api.component.css']
 })
-export class BienvenidoComponent implements OnInit {
+export class ConsumidorApiComponent implements OnInit {
 
   misBanderas:any[]|undefined;
   misPaises:Observable<any>|undefined;
 
-  bandera:string="";
-  constructor(public serviceGit: HttpService,public serviceLogin: LoginService) { }
+  constructor(public serviceGit: HttpService) { }
 
   ngOnInit(): void {
 
@@ -27,6 +25,5 @@ export class BienvenidoComponent implements OnInit {
     this.misPaises = this.serviceGit.todos();
 
   }
-
 
 }

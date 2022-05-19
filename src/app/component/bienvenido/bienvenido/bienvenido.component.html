@@ -1,10 +1,18 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center">
+
+<div class="d-flex" *ngIf="!this.serviceLogin.estalogueado">
+  <app-consumidor-api></app-consumidor-api>
+
+  <button [routerLink]="['login']">Login</button>
+</div>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center" *ngIf="this.serviceLogin.estalogueado">
 <ul class="nav d-flex justify-content-center">
     <li class="nav-item">
       <a class="nav-link active" [routerLink]="['busqueda']" aria-current="page" href="#">Busqueda</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" [routerLink]="['actor/alta']" href="#">Actores</a>
+      <a class="nav-link" [routerLink]="['actor/alta']" href="#">PRODUCTO</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#"  [routerLink]="['pelicula/alta']">Peliculas</a>

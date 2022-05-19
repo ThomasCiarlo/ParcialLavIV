@@ -1,5 +1,6 @@
 import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { Producto } from 'src/app/entidad/producto/producto';
 import { Actores } from 'src/app/entidades/actores/actores';
 import { ActoresServiceService } from 'src/app/service/actoresService/actores-service.service';
 
@@ -20,16 +21,16 @@ export class FormAltaComponent implements OnInit {
   ngOnInit(): void {
 
     this.form = this.fb.group({
-      'nombre': ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
-      'apellido': ['', Validators.required,Validators.minLength(3), Validators.maxLength(20)],
-      'bandera': ['', [Validators.required]]
+      'descripcion': ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
+      'precio': [],
+      'comestible': []
     });
   }
 
   public aceptar()
   {
-    const {nombre,apellido} = this.form.value;
-    this.actorNuevo.emit(new Actores(nombre,apellido,this.pais));
+    const {descripcion,precio,comestible} = this.form.value;
+    this.actorNuevo.emit(new Producto(3,descripcion,precio,0,this.pais,comestible));
     this.form.reset();
 
   }
