@@ -1,0 +1,19 @@
+<div class="d-flex column container flex-column">
+    <h3>Modificacion</h3>
+    <form [formGroup]="form" (ngSubmit)="aceptar()">
+      <div class="mb-3">
+        <label for="Marca" class="form-label">Marca</label>
+        <input type="text" formControlName="Marca" class="form-control" id="Marca">
+      </div>
+      <div class="mb-3">
+        <label for="Capacidad" class="form-label">Capacidad</label>
+        <input type="number" formControlName="Capacidad" class="form-control" id="Capacidad">
+      </div>
+      <div class="mb-3">
+        <label for="Codigo" class="form-label">Codigo</label>
+        <input type="number" formControlName="Codigo" class="form-control" id="Codigo">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Crear</button>
+    </form>
+</div>

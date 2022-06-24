@@ -8,17 +8,24 @@ import { BusquedaComponent } from './component/busqueda/busqueda/busqueda.compon
 import { LoginComponent } from './component/login/login.component';
 import { PeliculaAltaComponent } from './component/peliculaAlta/pelicula-alta/pelicula-alta.component';
 import { PeliculaListadoComponent } from './component/peliculaListado/pelicula-listado/pelicula-listado.component';
+import { AdminGuard } from './guard/admin.guard';
+import { AdminyEmpGuard } from './guard/adminy-emp.guard';
 
 const routes: Routes = [
   { path: 'bienvenido', component: BienvenidoComponent },
-  { path: 'busqueda', component: BusquedaComponent },
-  { path: 'pelicula/alta', component: PeliculaAltaComponent },
-  { path: 'actor/alta', component: ActorAltaComponent },
-  { path: 'actor/listado', component: ActorListadoComponent },
-  { path: 'pelicula/listado', component: PeliculaListadoComponent },
+  {
+    path: 'producto/alta', component: ActorAltaComponent,
+    canActivate: [AdminyEmpGuard]
+  },
   { path: 'login', component: LoginComponent },
-  { path: 'busquedaProducto', component: BusquedaProductoComponent },
-
+  {
+    path: 'busquedaProducto', component: BusquedaComponent,
+    canActivate: [AdminyEmpGuard]
+  },
+  {
+    path: 'container', loadChildren: () => import('./modules/container/container.module').then(m => m.ContainerModule),
+    canActivate: [AdminGuard]
+  },
 ];
 
 @NgModule({

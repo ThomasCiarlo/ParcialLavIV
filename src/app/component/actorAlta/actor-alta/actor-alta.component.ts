@@ -1,4 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
+import { Pais } from 'src/app/entidad/pais/pais';
 import { Producto } from 'src/app/entidad/producto/producto';
 import { Actores } from 'src/app/entidades/actores/actores';
 import { ActoresServiceService } from 'src/app/service/actoresService/actores-service.service';
@@ -12,15 +13,16 @@ import { ProductoService } from 'src/app/service/producto/producto.service';
 })
 export class ActorAltaComponent implements OnInit {
 
-  paisSeleccionado!: string;
+  paisSeleccionado!: Pais;
   productoNuevo? : Producto;
 
   constructor(public serviceActores: ActoresServiceService,public serviceProducto: ProductoService, public serviceGuardar: GuardarService) { }
 
   ngOnInit(): void {
+    this.serviceProducto.traerProductos();
   }
 
-  tomarPaisSeleccionado(pais: string)
+  tomarPaisSeleccionado(pais: Pais)
   {
       this.paisSeleccionado = pais;
   }
@@ -28,9 +30,9 @@ export class ActorAltaComponent implements OnInit {
   tomarnuevoActor(prod: Producto)
   {
     this.productoNuevo = prod;
+    this.productoNuevo.pais = this.paisSeleccionado; 
+    this.serviceGuardar.subirFirebaseProducto(this.productoNuevo);
     this.serviceProducto.Producto.push(this.productoNuevo);
-    this.serviceGuardar.subirFirebaseProducto(prod);
-    
   }
 
 }

@@ -12,13 +12,12 @@
         <label for="stock" class="form-label">stock</label>
         <input type="number" formControlName="stock" class="form-control" id="stock">
       </div>
-      <div class="mb-3">
-        <label for="bandera" class="form-label">Bandera</label>
-        <input type="text" class="form-control" id="bandera" readonly value="{{this.pais}}">
+      <div class="mb-3" *ngIf="this.pais != null">
+        <img src="{{this.pais?.bandera}}" alt="">
       </div>
       <div class="mb-3">
-        <label for="comestible" class="form-label">Comestible</label>
-        <select name="cars" id="cars" formControlName="comestible">
+        <label for="comestible" class="form-label">Comestible:</label>
+        <select class="form-control" name="cars" id="cars" formControlName="comestible">
           <option value="{{true}}">true</option>
           <option value="{{false}}">false</option>
         </select>

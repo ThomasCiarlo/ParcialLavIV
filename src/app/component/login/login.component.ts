@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Usuario } from 'src/app/entidad/usuario/usuario';
 import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
@@ -16,32 +17,37 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
     this.form = this.fb.group({
-      'usuario': ['', [Validators.required, Validators.minLength(1), Validators.maxLength(20)]],
+      'email': ['', [Validators.required, Validators.minLength(1), Validators.maxLength(20)]],
       'password': []
     });
   }
 
 
-  aceptar() {
-    const { usuario, password } = this.form.value;
-    if (this.serviceLogin.login(usuario, password)) {
-      console.log("se logueo")
-      return true;
+  async aceptar() {
+    const { email, password } = this.form.value;
+    const usuario: Usuario = new Usuario();
+    usuario.email = email;
+    usuario.password = password;
 
-    }
-    console.log(usuario, password)
-    console.log("no logueo")
-    return false;
+    await this.serviceLogin.login(usuario).then(() => {
+      if (this.serviceLogin.usuario != null) {
+        console.log("se logueo")
+      }
+    });
   }
 
-  rapido() {
-    if (this.serviceLogin.login('empleado', '1234')) {
-      console.log("se logueo")
-      return true;
+  async inicioRapido()
+  {
+    const usuario: Usuario = new Usuario();
+    usuario.email = 'thomasciarlo18@gmail.com';
+    usuario.password = '123456';
 
-    }
-    console.log("no logueo")
-    return false;
+    await this.serviceLogin.login(usuario).then(() => {
+      if (this.serviceLogin.usuario != undefined) {
+        console.log("usuario")
+        
+      }
+    });
   }
 
 }

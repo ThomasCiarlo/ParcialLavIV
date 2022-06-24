@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore/'; 
+import { Usuario } from 'src/app/entidad/usuario/usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -6,29 +8,23 @@ import { Injectable } from '@angular/core';
 export class LoginService {
 
 
-  estalogueado = false;
-  usuario = '';
-  constructor() { }
+  usuario!: Usuario;
+  constructor(public db: AngularFirestore) { }
 
-
-  login(user: string,password: string)
+  async login(usuario: Usuario)
   {
-    if('admin' == user && '1234' == password){
-      this.estalogueado = true;
-      this.usuario = user;
-      return true;
-    }
-
-    if('empleado' == user && '1234' == password){
-      this.estalogueado = true;
-      this.usuario = user;
-      return true;
-    }
-
-    return false;
+    this.db.collection<Usuario>('usuarios', ref => ref.where('email', '==' ,usuario.email).where('password', '==' ,usuario.password)).valueChanges()
+    .subscribe(usuario => {
+        if(usuario != null){
+          this.usuario = usuario[0];
+          console.log(this.usuario)
+        }
+    });
   }
 
-
-
-
+  async desloguear()
+  {
+    this.usuario = null!;
+  }
+  
 }

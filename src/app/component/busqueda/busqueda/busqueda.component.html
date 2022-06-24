@@ -1,19 +1,13 @@
-<div class="container d-flex row justify-content-center h-100">
-
+<div class="containner d-flex flex-column">
     <div>
-
-        <app-tabla-pelicula [item]="this.servicePelicula.peliculas" (PeliSeleccionado)="tomarPeliParaDetalles($event)">
-
+        <app-tabla-pelicula [item]="this.serviceProductos.Producto" (productoSeleccionado)="tomarProducto($event)">
         </app-tabla-pelicula>
-
     </div>
 
-
-    <div>
-
-        <app-detalle-pelicula [item]="PeliParaMostrar"></app-detalle-pelicula>
-
+    <div class="d-flex flex-row justify-content-between">
+        <app-detalle-pelicula [item]="this.productoSeleccionado"></app-detalle-pelicula>
+        <div *ngIf="this.productoSeleccionado != null">
+            <app-tabla-pais-unico [pais]="this.productoSeleccionado.pais"></app-tabla-pais-unico>
+        </div>
     </div>
-
-
 </div>

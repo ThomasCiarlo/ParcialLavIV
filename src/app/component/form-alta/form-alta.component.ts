@@ -1,5 +1,6 @@
 import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { Pais } from 'src/app/entidad/pais/pais';
 import { Producto } from 'src/app/entidad/producto/producto';
 import { Actores } from 'src/app/entidades/actores/actores';
 import { ActoresServiceService } from 'src/app/service/actoresService/actores-service.service';
@@ -11,7 +12,7 @@ import { ActoresServiceService } from 'src/app/service/actoresService/actores-se
 })
 export class FormAltaComponent implements OnInit {
 
-  @Input() pais!: string;
+  @Input() pais?: Pais;
   @Output() actorNuevo: EventEmitter<any>= new EventEmitter<any>();
 
   public form!: FormGroup;
@@ -31,9 +32,8 @@ export class FormAltaComponent implements OnInit {
   public aceptar()
   {
     const {descripcion,precio,stock,comestible} = this.form.value;
-    this.actorNuevo.emit(new Producto(3,descripcion,precio,stock,this.pais,comestible));
+    this.actorNuevo.emit(new Producto(3,descripcion,precio,stock,comestible));
     this.form.reset();
-
   }
 
 }

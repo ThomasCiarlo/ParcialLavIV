@@ -1,16 +1,23 @@
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">Nombre</th>
-        <th scope="col">Tipo</th>
-        <th scope="col">Actor</th>
+        <th scope="col">Codigo</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Comestible</th>
+        <th scope="col">Bandera</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>{{this.item?.Nombre}}</td>
-        <td>{{this.item?.tipo}}</td>
-        <td>{{this.item?.actor}}</td>
+        <td>{{this.item?.codigo}}</td>
+        <td>{{this.item?.descripcion}}</td>
+        <td>{{this.item?.stock}}</td>
+        <td>{{this.item?.precio}}</td>
+        <td>{{this.item?.comestible}}</td>
+        <td *ngIf="this.item != null"><img src="{{this.item?.pais?.bandera}}" alt=""></td>
       </tr>
     </tbody>
   </table>

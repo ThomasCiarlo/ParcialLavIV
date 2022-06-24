@@ -1,3 +1,4 @@
+<div class="container">
 <table class="table">
     <thead>
       <tr>
@@ -5,14 +6,14 @@
         <th scope="col">Bandera</th>
       </tr>
     </thead>
-    <tbody *ngFor="let pais of this.paises.paises">
+    <tbody *ngFor="let bandera of misPaises| async ">
       <tr>
-        <th scope="row">1</th>
-        <td>{{pais.Nombre}}</td>
-        <td>{{pais.bandera}}</td>
-        <td><button type="button" class="btn btn-info btn-circle" (click)="this.enviarPais(pais.Nombre)"><i class="fa fa-check"></i>
+        <td>{{bandera.name.common}}</td>
+        <td><img src={{bandera.flags.png}} alt=""></td>
+        <td><button type="button" class="btn btn-info btn-circle" (click)="this.enviarPais(bandera.name.common,bandera.flags.png)"><i class="fa fa-check"></i>
           Elegir
         </button></td>
       </tr>
     </tbody>
   </table>
+</div>

@@ -27,6 +27,8 @@ import { BusquedaProductoComponent } from './component/busqueda-producto/busqued
 import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
+import { HomeComponent } from './component/home/home.component';
+import { TablaPaisUnicoComponent } from './component/tabla-pais-unico/tabla-pais-unico.component';
 
 
 @NgModule({
@@ -47,13 +49,15 @@ import { AngularFireModule } from '@angular/fire/compat';
     ConsumidorApiComponent,
     DetalleProductoComponent,
     BusquedaProductoComponent,
+    HomeComponent,
+    TablaPaisUnicoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireModule,
   ],

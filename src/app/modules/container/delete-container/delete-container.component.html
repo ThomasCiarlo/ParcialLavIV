@@ -1,0 +1,10 @@
+<div class="d-flex flex-column column container" *ngIf="this.container != null">
+    <h3>Eliminacion</h3>
+    <ul>
+        <li>{{this.container.codigo}}</li>
+        <li>{{this.container.marca}}</li>
+        <li>{{this.container.capacidad}}</li>
+    </ul>
+    <button class="btn btn-danger" (click)="this.aceptar()">Eliminar</button>
+</div>
+

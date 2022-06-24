@@ -1,20 +1,24 @@
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">Foto</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Tipo</th>
-        <th scope="col">Actor</th>
+        <th scope="col">Codigo</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Comestible</th>
+        <th scope="col">Bandera</th>
+        <th scope="col"></th>
       </tr>
     </thead>
-    <tbody *ngFor="let peli of this.item">
+    <tbody *ngFor="let procutos of this.item">
       <tr>
-        <td><img src="{{peli.imagen}}" alt=""></td>
-        <td>{{peli.Nombre}}</td>
-        <td>{{peli.tipo}}</td>
-        <td>{{peli.actor}}</td>
-        <td><button type="button" class="btn btn-info btn-circle"   (click)="mostrarDetalles(peli)"><i class="fa fa-check"></i>
-        </button></td>
+        <td>{{procutos.codigo}}</td>
+        <td>{{procutos.descripcion}}</td>
+        <td>{{procutos.stock}}</td>
+        <td>{{procutos.precio}}</td>
+        <td>{{procutos.comestible}}</td>
+        <td><img src="{{procutos?.pais?.bandera}}" alt=""></td>
+        <td><button type="button" class="btn btn-info btn-circle"   (click)="mostrarDetalles(procutos)">
+        Seleccionar</button></td>
       </tr>
     </tbody>
   </table>

@@ -1,2 +1,7 @@
 <app-bienvenido></app-bienvenido>
+
+<div class="d-flex justify-content-center m-2" *ngIf="this.serviceLogin.usuario == null">
+    <app-consumidor-api></app-consumidor-api>
+</div>
+
 <router-outlet></router-outlet>

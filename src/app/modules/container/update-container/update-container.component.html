@@ -1,0 +1,15 @@
+<div class="d-flex flex-column container" *ngIf="this.container != null">
+    <h3>Modificacion</h3>
+    <form [formGroup]="form" (ngSubmit)="aceptar()">
+      <div class="mb-3">
+        <label for="Marca" class="form-label">Marca</label>
+        <input type="text" formControlName="marca" class="form-control" id="Marca">
+      </div>
+      <div class="mb-3">
+        <label for="Capacidad" class="form-label">Capacidad</label>
+        <input type="number" formControlName="capacidad" class="form-control" id="Capacidad">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Modificar</button>
+    </form>
+</div>

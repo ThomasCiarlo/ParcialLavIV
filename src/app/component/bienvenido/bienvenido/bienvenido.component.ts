@@ -17,15 +17,6 @@ export class BienvenidoComponent implements OnInit {
   constructor(public serviceGit: HttpService,public serviceLogin: LoginService) { }
 
   ngOnInit(): void {
-
-    this.serviceGit.todos().subscribe(
-      banderas=>{
-        console.info(banderas);  
-      this.misBanderas = banderas.login; 
-    }  );
-    
-    this.misPaises = this.serviceGit.todos();
-
   }
 
 

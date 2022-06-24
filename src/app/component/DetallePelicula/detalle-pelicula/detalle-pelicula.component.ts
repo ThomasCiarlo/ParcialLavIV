@@ -1,4 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
+import { Producto } from 'src/app/entidad/producto/producto';
 import { Peliculas } from 'src/app/entidades/Peliculas/peliculas';
 
 @Component({
@@ -8,7 +9,7 @@ import { Peliculas } from 'src/app/entidades/Peliculas/peliculas';
 })
 export class DetallePeliculaComponent implements OnInit {
 
-  @Input() item: Peliculas | undefined;
+  @Input() item!: Producto;
 
   constructor() { }
 

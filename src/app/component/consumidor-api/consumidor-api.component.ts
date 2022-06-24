@@ -9,21 +9,21 @@ import { Observable } from 'rxjs';
 })
 export class ConsumidorApiComponent implements OnInit {
 
-  misBanderas:any[]|undefined;
-  misPaises:Observable<any>|undefined;
+  nombre:any[]|undefined;
+  imagen!: string;
+  misdatos:Observable<any>|undefined;
 
   constructor(public serviceGit: HttpService) { }
 
   ngOnInit(): void {
 
     this.serviceGit.todos().subscribe(
-      banderas=>{
-        console.info(banderas);  
-      this.misBanderas = banderas.login; 
-    }  );
+      datos=>{
+      this.nombre = datos.login;
+      this.imagen = datos.avatar_url; 
+    });
     
-    this.misPaises = this.serviceGit.todos();
-
+    this.misdatos = this.serviceGit.todos();
   }
 
 }

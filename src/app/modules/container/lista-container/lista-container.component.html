@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Codigo</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Capacidad</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let container of this.traigoContainer.Containers">
+      <tr>
+        <td>{{container.codigo}}</td>
+        <td>{{container.marca}}</td>
+        <td>{{container.capacidad}}</td>
+        <td><button class="btn btn-primary" (click)="this.enviarContainer(container)">Seleccionar</button></td>
+      </tr>
+    </tbody>
+</table>

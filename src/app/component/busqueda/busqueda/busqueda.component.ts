@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Peliculas } from 'src/app/entidades/Peliculas/peliculas';
 import { PeliculasServiceService } from 'src/app/service/peliculas/peliculas-service.service';
 import { TablaPeliculaComponent } from 'src/app/component/tabla-pelicula/tabla-pelicula.component';
+import { ProductoService } from 'src/app/service/producto/producto.service';
+import { Producto } from 'src/app/entidad/producto/producto';
 
 @Component({
   selector: 'app-busqueda',
@@ -10,16 +12,17 @@ import { TablaPeliculaComponent } from 'src/app/component/tabla-pelicula/tabla-p
 })
 export class BusquedaComponent implements OnInit {
 
-  PeliParaMostrar?:Peliculas;
+  productoSeleccionado!:Producto;
 
-  constructor(public servicePelicula: PeliculasServiceService) { }
+  constructor(public serviceProductos: ProductoService) { }
 
   ngOnInit(): void {
+    this.serviceProductos.traerProductos();
   }
 
-  tomarPeliParaDetalles(Peliculas: Peliculas)
+  tomarProducto(producto: Producto)
   {
-    this.PeliParaMostrar=Peliculas;   
+    this.productoSeleccionado=producto;   
   }
 
 }

@@ -1,10 +1,7 @@
-.container
+.containner
 {
-    margin: 0 auto;
     background-color: white;
-}
-
-div
-{
-    margin: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
 }

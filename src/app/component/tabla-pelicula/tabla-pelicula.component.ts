@@ -1,4 +1,5 @@
 import { Component, OnInit,Input,Output,EventEmitter  } from '@angular/core';
+import { Producto } from 'src/app/entidad/producto/producto';
 import { Peliculas } from 'src/app/entidades/Peliculas/peliculas';
 
 @Component({
@@ -8,18 +9,17 @@ import { Peliculas } from 'src/app/entidades/Peliculas/peliculas';
 })
 export class TablaPeliculaComponent implements OnInit {
 
-  @Input() item: Peliculas[] | undefined;
-  @Output() PeliSeleccionado: EventEmitter<any>= new EventEmitter<any>();
+  @Input() item!: Producto[];
+  @Output() productoSeleccionado: EventEmitter<any>= new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  mostrarDetalles(peli:Peliculas)
+  mostrarDetalles(producto:Producto)
   {
-    console.info("mostrar detalles",peli);
-    this.PeliSeleccionado.emit(peli);
+    this.productoSeleccionado.emit(producto);
   }
 
 }

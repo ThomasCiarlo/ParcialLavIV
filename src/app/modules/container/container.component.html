@@ -1,0 +1,10 @@
+<div class="d-flex flex-column containner">
+    <div class="d-flex flex-row justify-content-between">
+        <app-nuevo-container (container)="this.tomarNuevoContainer($event)"></app-nuevo-container>
+        <app-update-container [container]="this.containerSeleccionado"></app-update-container>
+        <app-delete-container [container]="this.containerSeleccionado"></app-delete-container>
+    </div>
+    <div>
+        <app-lista-container (containerSeleccionado)="this.tomarContSeleccionado($event)"></app-lista-container>
+    </div>
+</div>
